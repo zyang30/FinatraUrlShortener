@@ -5,11 +5,12 @@ import java.net.URL
 import com.twitter.finagle.http.Request
 import com.twitter.finatra.http.Controller
 import com.twitter.finatra.http.response.ResponseBuilder
-import services._
+import services.RedisUrlShortenerService
 import com.twitter.inject.annotations.Flag
 import javax.inject.Inject
 
-class UrlShortenerController@Inject()(@Flag("secure") secure: Boolean, urlShortenerService: RedisUrlShortenerService, response: ResponseBuilder) extends Controller  {
+
+class UrlShortenerController @Inject()(@Flag("secure") secure: Boolean, urlShortenerService: RedisUrlShortenerService, response: ResponseBuilder) extends Controller  {
 
   get("/:id") { request: Request =>
     urlShortenerService.get(request.params.getOrElse("id", "")) match {
@@ -20,6 +21,11 @@ class UrlShortenerController@Inject()(@Flag("secure") secure: Boolean, urlShorte
     }
   }
 
+  get("/hi"){request: Request =>
+    val hi:String = "hi"
+    s"Hi this is your $hi page"
+
+  }
 
   post("/"){ request: Request =>
 

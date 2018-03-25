@@ -17,7 +17,7 @@ class RedisUrlShortenerService @Inject()(client: JedisClient) extends UrlShorten
     val addr = new Random().nextInt()
     client.set(
       "%s%s".format("url-", addr.toString),
-      url.toString)
+      url)
     java.lang.Long.toString(addr)
   }
 
