@@ -26,6 +26,9 @@ class UrlShortenerController @Inject()(@Flag("secure") secure: Boolean, urlShort
     s"Hi this is your $hi page"
 
   }
+  get("/test"){request: Request =>
+    response.movedPermanently.file("TestPost.html")
+  }
 
   post("/"){ request: Request =>
 

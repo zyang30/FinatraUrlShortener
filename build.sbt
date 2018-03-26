@@ -40,6 +40,4 @@ libraryDependencies ++= libraryTestDependencies ++ Seq(
 
   "org.specs2" %% "specs2-mock" % versions.specs2 % "test",
 
-  "redis.clients" % "jedis" % versions.redis
-
-  "com.twitter" %% "finatra-activator-http-seed" % versions.)
+  "redis.clients" % "jedis" % versions.redis)
