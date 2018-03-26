@@ -1,6 +1,9 @@
 name := "FinatraUrlShortener"
 version := "0.1"
 scalaVersion := "2.12.4"
+
+enablePlugins(JavaAppPackaging)
+
 lazy val versions = new {
   val finatra = "17.10.0"
   val guice = "4.0"
